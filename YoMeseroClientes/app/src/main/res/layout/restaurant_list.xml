@@ -6,14 +6,13 @@
 
     <ImageView
         android:id="@+id/iconRest"
-        android:layout_width="120dp"
-        android:layout_height="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
         android:contentDescription="TODO"
-        android:src="@mipmap/restaurant"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@+id/firstLineRest"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/fourthLineRest"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/thirdLineRest"
@@ -37,9 +36,10 @@
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_above="@+id/secondLineRest"
-        android:layout_toRightOf="@+id/iconRest"
-        android:layout_toEndOf="@+id/iconRest" />
+        />
 
     <TextView
         android:id="@+id/secondLineRest"

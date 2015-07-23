@@ -10,8 +10,21 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/itemsListView"
+        android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-    />
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Lista de Items"
+        android:id="@+id/textView"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"/>
 
 </RelativeLayout>
