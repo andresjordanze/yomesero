@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :restaurants
 
-  get '/create_from_json'=>"items#create_from_json"
+  get '/create_from_json'=> "items#create_from_json"
+  get '/verify_password' => "items#verify_password"
   #post '/create_from_json'=>"items#create_from_json"
   resources :items
 

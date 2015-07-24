@@ -44,7 +44,9 @@ class ItemsController < ApplicationController
     @item.item_type = params[:item_type]
     @item.item_time = params[:item_time]
     @item.item_price = params[:item_price]
-    @item.save
+    if @item.item_name!="" and @item.item_description!="" and @item.item_type!="" and @item.item_price!="" and @item.item_time!=""
+      @item.save
+    end
     redirect_to @item
   end
 
@@ -69,6 +71,22 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def verify_password
+    @user = params[:username]
+    @pass = params[:password]
+    @u = User.where(:email => @user).first
+    if @u!=nil
+          if @u.valid_password?(@pass)
+            render json: @u
+          else
+            @u = User.new
+            render json: @u
+          end
+    else
+      return false
     end
   end
 
