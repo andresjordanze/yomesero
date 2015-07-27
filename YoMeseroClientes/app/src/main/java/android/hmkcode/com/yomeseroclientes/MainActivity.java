@@ -38,8 +38,12 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+        if (id == R.id.action_log_out){
+            SaveSharedPreference.setUserName(MainActivity.this,"");
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -52,11 +56,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void openRestaurants(View view){
         Intent intent = new Intent(this,DisplayRestaurantsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openLogin(View view){
-        Intent intent = new Intent(this,LoginActivity.class);
         startActivity(intent);
     }
 
